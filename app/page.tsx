@@ -1,101 +1,165 @@
 import Image from "next/image";
+import React from "react";
+import CardDemo from "@/components/cards-demo-2";
+import { FaLink } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { Certificate } from "crypto";
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <h1 className="text-8xl font-bold">I'm Mark, I build <FallingText text="things" /></h1>
+        <p className="text-2xl font-semibold">Aspiring game and web developer</p>
+        <div className="w-1/2">
+        <p className="text-md">Computer Engineering student with a passion for coding and solving problems. Interested in game development, web development, and cybersecurity.</p>
         </div>
+
+        <img className="w-1/4 absolute rounded-lg right-[80px] top-[180px] border-2 border-slate-800" src="assets/me.jpg" alt="" />
+
+        <div className="flex flex-col">
+        <p className="text-4xl py-4">About Me</p>
+        <div className="grid grid-cols-2">
+          <div className="flex flex-col">
+            <p>Mark Daniel Soriano</p>
+            <p>markysoriano2002@gmail.com</p>
+            <p>0945 778 2801</p>
+          </div>
+          <div className="flex flex-row px-8">
+            <div className="w-8 my-auto"><FaLink /></div>
+            <div className="flex flex-col">
+              <a className="links" href="https://www.facebook.com/mark.soriano.897595"><strong>Facebook</strong></a>
+              <a className="links" href="https://www.linkedin.com/in/mark-soriano-96a564316/"><strong>LinkedIn</strong></a>
+              <a className="links" href="https://github.com/marky0470"><strong>Github</strong></a>
+            </div>
+          </div>
+
+        </div>
+        </div>
+
+        <div className="flex flex-col">
+          <p className="text-4xl py-4">Projects</p>
+          <div className="text-4xl pt-4 grid grid-cols-2 gap-x-8 gap-y-4 *:h-60">
+          
+            <div className="card border-2 border-slate-600 rounded-md p-8 mt-4 flex flex-row">
+              <img className="w-48 object-cover" src="/assets/prismatic.png"/>
+              <span className="flex flex-col pl-8">
+                <div className="text-3xl">Prismatic</div>
+                <hr className="mt-2 mb-2 border-slate-600"></hr>
+                <p className="text-base">A game developed in Godot for the Pirate Software 2024 Game Jam themed "Shadows and Alchemy"</p>
+              </span>
+            </div>
+
+            <div className="card border-2 border-slate-600 rounded-md p-8 mt-4 flex flex-row">
+              <img className="w-48 object-cover" src="/assets/resort3.png"/>
+              <span className="flex flex-col pl-8">
+                <div className="text-3xl">Guillermo</div>
+                <hr className="mt-2 mb-2 border-slate-600"></hr>
+                <p className="text-base">Online Reservation System for Guillermo Private Resort</p>
+              </span>
+            </div>
+
+            <div className="card border-2 border-slate-600 rounded-md p-8 mt-4 flex flex-row">
+              <img className="w-48 object-cover" src="/assets/cinema1.png"/>
+              <span className="flex flex-col pl-8">
+                <div className="text-xl">Cinema Management System</div>
+                <hr className="mt-2 mb-2 border-slate-600"></hr>
+                <p className="text-base">Cinema Management System with Ticket, Employee, Cinema, Screening, and Movie Management</p>
+              </span>
+            </div>
+
+            <div className="card border-2 border-slate-600 rounded-md p-8 mt-4 flex flex-row">
+              <img className="w-48 object-cover" src="/assets/gozsun.png"/>
+              <span className="flex flex-col pl-8">
+                <div className="text-3xl">GozSun</div>
+                <hr className="mt-2 mb-2 border-slate-600"></hr>
+                <p className="text-base">Website for solar smart technologies and energy solutions</p>
+              </span>
+            </div>
+
+            <div className="card border-2 border-slate-600 rounded-md p-8 mt-4 flex flex-row">
+              <img className="w-48 object-cover" src="/assets/ror.png"/>
+              <span className="flex flex-col pl-8">
+                <div className="text-3xl">Risk of Rain Modding</div>
+                <hr className="mt-2 mb-2 border-slate-600"></hr>
+                <p className="text-base">Adding content to Risk of Rain</p>
+              </span>
+            </div>
+            
+          </div>
+        
+
+        </div>
+        <div className="flex flex-row space-x-20">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="text-4xl pt-16 *:h-60">Skills
+              <div className="mt-4 flex flex-col gap-4">
+                <div className="text-2xl">Python</div>
+                <div className="text-2xl">Java</div>
+                <div className="text-2xl">JavaScript</div>
+                <div className="text-2xl">GDScript</div>
+                <div className="text-2xl">Github</div>
+              </div>
+            </div>
+          </div>
+            
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="text-4xl pt-16 *:h-60">Soft Skills
+              <div className="mt-4 flex flex-col gap-4">
+                <div className="text-2xl">Collaboration</div>
+                <div className="text-2xl">Communication</div>
+                <div className="text-2xl">Problem Solving</div>
+                <div className="text-2xl">Critical Thinking</div>
+                <div className="text-2xl">Adaptability</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="text-4xl pt-16 *:h-60">Tools
+              <div className="mt-4 flex flex-col gap-4">
+                <div className="text-2xl">Visual Studio Code</div>
+                <div className="text-2xl"><del>ChatGPT</del></div>
+                <div className="text-2xl">Godot</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="/resume.pdf" download="resume.pdf">
+          <div className="text-4xl p-4 *:h-60 rounded-md bg-slate-50 text-slate-900">Portfolio</div>
+        </a>
+
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
       </footer>
     </div>
   );
 }
+
+
+interface FallingTextProps {
+  text: string;
+}
+
+const FallingText: React.FC<FallingTextProps> = ({ text }) => {
+  return (
+    <div className="falling-text-container">
+      {text.split("").map((char, index) => {
+        var x = Math.random();
+        return <span
+          key={index}
+          className="falling-letter"
+          style={{
+            animationDelay: `${index * 0.2}s`,
+            "deviaton": x,
+          } as React.CSSProperties}
+        >
+          {char}
+        </span>
+      })}
+    </div>
+  );
+};
