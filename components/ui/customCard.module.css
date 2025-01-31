@@ -1,0 +1,6 @@
+.Card::before {
+    background: radial-gradient(
+        500px circle at var(--mouse-x) var(mouse-y),
+        rgba(255,255,255,1)
+    );
+}
